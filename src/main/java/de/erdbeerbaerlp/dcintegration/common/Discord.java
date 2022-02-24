@@ -267,15 +267,22 @@ public class Discord extends Thread {
             if (listener != null) {
                 System.out.println("Unloading listener: " + listener);
                 jda.removeEventListener(listener);
+                System.out.println("Unloaded listener");
             }
+            System.out.println("Stopping threads");
             stopThreads();
+            System.out.println("Stopped threads");
             unregisterAllEventHandlers();
+            System.out.println("Unregistered event handlers");
             webhookClis.forEach((i, w) -> w.close());
+            System.out.println("Webhooks closed");
             try {
+                System.out.println("Attempting shutdown");
                 if (instant) jda.shutdownNow();
                 else jda.shutdown();
             } catch (LinkageError ignored) { //Fix exception logged when reloading
             }
+            System.out.println("Shutdown success !!");
             jda = null;
             Variables.discord_instance = null;
         }
