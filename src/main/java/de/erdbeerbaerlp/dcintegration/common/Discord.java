@@ -158,7 +158,7 @@ public class Discord extends Thread {
     @Override
     public void run() {
         while (true) {
-
+            System.out.println("DATA001");
             final JDABuilder b = JDABuilder.createDefault(Configuration.instance().general.botToken);
             b.enableIntents(GatewayIntent.GUILD_MEMBERS);
             b.setAutoReconnect(true);
@@ -829,6 +829,7 @@ public class Discord extends Thread {
         @Override
         public void run() {
             while (true) {
+                System.out.println("DATA002");
                 if (!messages.isEmpty()) {
                     messages.forEach((channel, msgs) -> {
                         StringBuilder s = new StringBuilder();
@@ -858,6 +859,7 @@ public class Discord extends Thread {
         @Override
         public void run() {
             while (true) {
+                System.out.println("DATA003");
                 if (jda != null) {
                     final String game = Configuration.instance().general.botStatusName
                             .replace("%online%", "" + srv.getOnlinePlayers())
