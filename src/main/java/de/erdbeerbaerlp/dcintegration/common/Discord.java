@@ -174,6 +174,7 @@ public class Discord extends Thread {
                 }
                 System.err.println("Login failed, retrying");
                 try {
+                    System.out.println("Sleepy Time 003");
                     sleep(6000);
                 } catch (InterruptedException ignored) {
                     return;
@@ -838,7 +839,8 @@ public class Discord extends Thread {
                     messages.clear();
                 }
                 try {
-                    Thread.sleep(500);
+                    System.out.println("Sleepy Time 001");
+                    sleep(500);
                 } catch (InterruptedException e) {
                     return;
                 }
@@ -898,6 +900,7 @@ public class Discord extends Thread {
                 for (int i : remove)
                     pendingBedrockLinks.remove(i);
                 try {
+                    System.out.println("Sleepy Time 002");
                     sleep(1000);
                 } catch (InterruptedException e) {
                     return;
